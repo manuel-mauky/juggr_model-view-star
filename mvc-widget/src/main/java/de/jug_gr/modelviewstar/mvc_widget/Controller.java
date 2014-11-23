@@ -1,4 +1,4 @@
-package juggr.mvc_widget;
+package de.jug_gr.modelviewstar.mvc_widget;
 
 import javafx.scene.input.KeyCode;
 
