@@ -1,0 +1,25 @@
+apply plugin: "java"
+apply plugin: "war"
+apply plugin: 'jetty'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+repositories {
+  mavenLocal()
+  mavenCentral()
+  maven{
+    url "https://oss.sonatype.org/content/repositories/snapshots/"
+  }
+}
+
+
+dependencies{
+  compile 'javax.servlet:javax.servlet-api:3.1.0'
+  compile 'org.apache.myfaces.core:myfaces-api:2.2.6'
+  compile 'org.apache.myfaces.core:myfaces-impl:2.2.6'
+  compile 'org.jboss.weld.servlet:weld-servlet:2.2.5.Final'
+  compile 'ch.qos.logback:logback-classic:1.1.2'
+  compile 'org.slf4j:slf4j-api:1.7.7'
+}
