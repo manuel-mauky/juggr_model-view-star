@@ -7,11 +7,31 @@
       xmlns:h="http://java.sun.com/jsf/html">
 
 <h:head>
-    <title>Simple JSF Facelets page</title>
+    <title>MVC JSF example</title>
 </h:head>
 
 <h:body>
-    Place your content here
+
+    <h:form>
+
+        <h:panelGrid columns="2">
+            <h:outputLabel for="usernameInput" value="Username:"/>
+            <h:inputText id="usernameInput" required="true" value="#{registerModel.username}"/>
+
+            <h:outputLabel for="firstPasswordInput" value="Password:"/>
+            <h:inputSecret id="firstPasswordInput" required="true" value="#{registerModel.firstPassword}" />
+
+            <h:outputLabel for="secondPasswordInput" value="Repeat password:"/>
+            <h:inputSecret id="secondPasswordInput" required="true"  value="#{registerModel.secondPassword}"/>
+
+        </h:panelGrid>
+
+        <h:commandButton value="Register" action="#{registerController.register}"/>
+
+        <h:messages />
+
+    </h:form>
+
 </h:body>
 
 </html>
