@@ -1,0 +1,25 @@
+apply plugin: "java"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven{
+        url "https://oss.sonatype.org/content/repositories/snapshots/"
+    }
+}
+
+dependencies {
+    compile 'javax.inject:javax.inject:1'
+    compile 'javax.enterprise:cdi-api:1.2'
+    compile "com.theoryinpractise:halbuilder-json:4.0.2"
+    compile "com.theoryinpractise:halbuilder-jaxrs:1.1.1"
+    compile "org.jboss.resteasy:resteasy-client:3.0.9.Final"
+
+    compile "org.slf4j:slf4j-api:1.7.5"
+    compile "ch.qos.logback:logback-classic:1.1.2"
+
+}

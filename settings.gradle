@@ -1,1 +1,4 @@
-include "mvc-widget", "mvc-java-server-faces"
+include "mvc-widget"
+include "mvc-java-server-faces"
+include 'business'
+
