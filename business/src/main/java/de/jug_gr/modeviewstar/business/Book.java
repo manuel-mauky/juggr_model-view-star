@@ -2,9 +2,6 @@ package de.jug_gr.modeviewstar.business;
 
 import com.theoryinpractise.halbuilder.api.Link;
 
-import javax.enterprise.inject.Vetoed;
-
-@Vetoed
 public class Book {
 
     private final String href;
