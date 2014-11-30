@@ -1,0 +1,1 @@
+This module contains an example of Model-View-ViewModel created with the MVVM framework [mvvmFX](). 
