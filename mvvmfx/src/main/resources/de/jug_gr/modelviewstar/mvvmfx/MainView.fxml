@@ -71,7 +71,7 @@
 												<Label fx:id="titleLabel" styleClass="title1" text="Titel" />
 												<Label fx:id="authorLabel" styleClass="title2" text="Aiuthorname" />
 												<Label fx:id="descriptionLabel" prefWidth="500.0"
-													text="SomeCooltextSomeCooltextSomeCooltextSomeCooltextSoSomeCooltextSomeCooltextSomeCooltextSomeCooltextSomeCooltextSomeCooltextSomeCooltextSomeCooltextSomeCooltextSomeCooltextSomeCooltextSomeCooltextSomeCooltextSomeCooltextSomeCooltextSomeCooltextSomeCooltextSomeCooltextmeCooltextSomeCooltextSomeCooltextSomeCooltextSomeCooltext"
+													text="SomeCooltext"
 													wrapText="true" VBox.vgrow="NEVER" />
 												<GridPane maxWidth="500.0" prefWidth="500.0">
 													<columnConstraints>
