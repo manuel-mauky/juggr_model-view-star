@@ -1,5 +1,8 @@
 package de.jug_gr.modelviewstar.mvvmfx;
 
+import de.jug_gr.modeviewstar.business.Book;
+import de.jug_gr.modeviewstar.business.Error;
+import de.jug_gr.modeviewstar.business.LibraryService;
 import de.saxsys.mvvmfx.ViewModel;
 import eu.lestard.advanced_bindings.api.ObjectBindings;
 import javafx.beans.property.ObjectProperty;
@@ -9,10 +12,16 @@ import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import javax.inject.Singleton;
+import java.util.List;
+import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
+@Singleton
 public class MainViewModel implements ViewModel {
 
-    private StringProperty searchString = new SimpleStringProperty();
+    private final LibraryService libraryService;
+    private StringProperty searchString = new SimpleStringProperty("");
 
     private StringProperty bookTitle = new SimpleStringProperty();
     private StringProperty bookAuthor = new SimpleStringProperty();
@@ -24,7 +33,8 @@ public class MainViewModel implements ViewModel {
 
     private StringProperty error = new SimpleStringProperty();
 
-    public MainViewModel(){
+    public MainViewModel(LibraryService libraryService){
+        this.libraryService = libraryService;
 
         bookTitle.bind(ObjectBindings.map(selectedBook, BookViewModel::getTitle));
         bookAuthor.bind(ObjectBindings.map(selectedBook, BookViewModel::getAuthor));
@@ -34,7 +44,16 @@ public class MainViewModel implements ViewModel {
 
 
     public void search(){
+        Consumer<Error> errorHandler = err -> error.set(err.getMessage());
 
+        final List<Book> result = libraryService.search(searchString.get(), errorHandler);
+
+        books.clear();
+        books.addAll(result
+            .stream()
+            .map(bookWithoutDescription -> libraryService.showDetails(bookWithoutDescription, errorHandler))
+            .map(BookViewModel::new)
+            .collect(Collectors.toList()));
     }
 
     public void lendBook(){
