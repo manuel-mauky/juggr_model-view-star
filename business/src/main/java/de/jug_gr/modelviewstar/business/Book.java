@@ -1,4 +1,4 @@
-package de.jug_gr.modeviewstar.business;
+package de.jug_gr.modelviewstar.business;
 
 import com.theoryinpractise.halbuilder.api.Link;
 

@@ -2,9 +2,9 @@ package de.jug_gr.modelviewstar.mvvmfx;
 
 import com.guigarage.flatterfx.FlatterFX;
 import com.guigarage.flatterfx.FlatterInputType;
-import de.jug_gr.modeviewstar.business.Book;
-import de.jug_gr.modeviewstar.business.LibraryService;
-import de.jug_gr.modeviewstar.business.LibraryServiceImpl;
+import de.jug_gr.modelviewstar.business.Book;
+import de.jug_gr.modelviewstar.business.LibraryService;
+import de.jug_gr.modelviewstar.business.LibraryServiceImpl;
 import de.saxsys.mvvmfx.FluentViewLoader;
 import de.saxsys.mvvmfx.MvvmFX;
 import eu.lestard.easydi.EasyDI;

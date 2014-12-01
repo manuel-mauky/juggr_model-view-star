@@ -1,9 +1,9 @@
 package de.jug_gr.modelviewstar.mvvmfx;
 
 
-import de.jug_gr.modeviewstar.business.Book;
-import de.jug_gr.modeviewstar.business.Error;
-import de.jug_gr.modeviewstar.business.LibraryService;
+import de.jug_gr.modelviewstar.business.Book;
+import de.jug_gr.modelviewstar.business.Error;
+import de.jug_gr.modelviewstar.business.LibraryService;
 import org.junit.Before;
 import org.junit.Test;
 

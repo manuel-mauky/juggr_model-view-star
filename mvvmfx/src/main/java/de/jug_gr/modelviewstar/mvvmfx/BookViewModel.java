@@ -1,6 +1,6 @@
 package de.jug_gr.modelviewstar.mvvmfx;
 
-import de.jug_gr.modeviewstar.business.Book;
+import de.jug_gr.modelviewstar.business.Book;
 
 public class BookViewModel {
 

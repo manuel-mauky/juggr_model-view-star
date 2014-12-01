@@ -1,4 +1,4 @@
-package de.jug_gr.modeviewstar.business;
+package de.jug_gr.modelviewstar.business;
 
 import com.theoryinpractise.halbuilder.api.ContentRepresentation;
 import com.theoryinpractise.halbuilder.api.Link;
@@ -15,13 +15,13 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.Response;
 import java.io.Serializable;
+import java.lang.*;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.function.Consumer;
 
 import static com.theoryinpractise.halbuilder.api.RepresentationFactory.*;
-import static de.jug_gr.modeviewstar.business.HalUtil.*;
 
 public class LibraryServiceImpl implements Serializable, LibraryService {
 
@@ -48,7 +48,7 @@ public class LibraryServiceImpl implements Serializable, LibraryService {
             ContentRepresentation repHome = responseHome.readEntity(ContentRepresentation.class);
             // search
             Link searchLink = repHome.getLinkByRel("lib:search");
-            String href = replaceParam(searchLink.getHref(), query);
+            String href = HalUtil.replaceParam(searchLink.getHref(), query);
             Response responseSearch = apiClient.target(href).request(HAL_JSON).get();
             ContentRepresentation repSearch =
                     responseSearch.readEntity(ContentRepresentation.class);
@@ -125,8 +125,8 @@ public class LibraryServiceImpl implements Serializable, LibraryService {
                 detailBook.getBorrower());
         Response response =
                 apiClient.target(
-                        replaceParam(detailBook.getRelReturn().getHref(), detailBook.getBorrower()
-                                .toString()))
+                        HalUtil.replaceParam(detailBook.getRelReturn().getHref(), detailBook.getBorrower()
+                            .toString()))
                         .request(HAL_JSON)
                         .delete();
         ContentRepresentation rep = response.readEntity(ContentRepresentation.class);
