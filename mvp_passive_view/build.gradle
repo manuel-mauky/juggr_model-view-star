@@ -1,0 +1,34 @@
+apply plugin: "java"
+apply plugin: "application"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+mainClassName = "de.jug_gr.modelviewstar.mvppv.App"
+jar.manifest.attributes("Main-Class" : mainClassName)
+
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven{
+        url "https://oss.sonatype.org/content/repositories/snapshots/"
+    }
+}
+
+dependencies {
+    compile "de.jensd:fontawesomefx:8.0.10"
+    compile "com.guigarage:flatter:0.7"
+    compile "ch.qos.logback:logback-classic:1.1.2"
+
+    compile "eu.lestard:easy-di:0.1.0"
+    compile "eu.lestard:advanced-bindings:0.2.0"
+
+    compile project(":business")
+
+    testCompile "org.assertj:assertj-core:1.6.0"
+    testCompile "eu.lestard:assertj-javafx:0.2.0"
+    testCompile "junit:junit:4.11"
+    testCompile 'org.mockito:mockito-all:1.10.8'
+
+}
