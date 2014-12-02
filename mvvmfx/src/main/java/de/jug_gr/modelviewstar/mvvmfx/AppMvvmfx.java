@@ -13,7 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-public class App extends Application {
+public class AppMvvmfx extends Application {
 
     public static void main(String[] args) {
         launch(args);

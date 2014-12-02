@@ -15,19 +15,7 @@ public class MainView implements FxmlView<MainViewModel> {
     private Label authorLabel;
 
     @FXML
-    private Button rentButton;
-
-    @FXML
-    private TextField lendTextField;
-
-    @FXML
-    private Label returnName;
-
-    @FXML
     private TextField searchTextField;
-
-    @FXML
-    private Button returnButton;
 
     @FXML
     private Button searchButton;
@@ -37,12 +25,6 @@ public class MainView implements FxmlView<MainViewModel> {
 
     @FXML
     private ListView<BookViewModel> bookList;
-
-    @FXML
-    private ProgressIndicator listProgress;
-
-    @FXML
-    private ProgressIndicator detailProgress;
 
     @FXML
     private Label errorLabel;
@@ -64,13 +46,5 @@ public class MainView implements FxmlView<MainViewModel> {
 
     public void searchButtonPressed() {
         viewModel.search();
-    }
-
-    public void lendButtonPressed() {
-        viewModel.lendBook();
-    }
-
-    public void returnButtonPressed() {
-        viewModel.returnBook();
     }
 }

@@ -73,13 +73,13 @@ public class MainViewModelTest {
         Book book3 = createBook("book starting with b", "some author", null);
         Book book3WithDescription = createBook("book starting with b", "some author", "some description 3");
 
-        when(libraryService.search("a", null)).thenReturn(Arrays.asList(book1, book2));
-        when(libraryService.search("b", null)).thenReturn(Arrays.asList(book3));
-        when(libraryService.search("", null)).thenReturn(Collections.emptyList());
+        when(libraryService.search(eq("a"), any())).thenReturn(Arrays.asList(book1, book2));
+        when(libraryService.search(eq("b"), any())).thenReturn(Arrays.asList(book3));
+        when(libraryService.search(eq(""), any())).thenReturn(Collections.emptyList());
 
-        when(libraryService.showDetails(book1, null)).thenReturn(book1WithDescription);
-        when(libraryService.showDetails(book2, null)).thenReturn(book2WithDescription);
-        when(libraryService.showDetails(book3, null)).thenReturn(book3WithDescription);
+        when(libraryService.showDetails(eq(book1), any())).thenReturn(book1WithDescription);
+        when(libraryService.showDetails(eq(book2), any())).thenReturn(book2WithDescription);
+        when(libraryService.showDetails(eq(book3), any())).thenReturn(book3WithDescription);
 
         // when
         viewModel.searchStringProperty().set("a");

@@ -56,14 +56,6 @@ public class MainViewModel implements ViewModel {
             .collect(Collectors.toList()));
     }
 
-    public void lendBook(){
-
-    }
-
-    public void returnBook(){
-
-    }
-
 
     public StringProperty searchStringProperty() {
         return searchString;
