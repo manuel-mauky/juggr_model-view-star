@@ -2,7 +2,6 @@ package de.jug_gr.modelviewstar.mvvmfx;
 
 import com.guigarage.flatterfx.FlatterFX;
 import com.guigarage.flatterfx.FlatterInputType;
-import de.jug_gr.modelviewstar.business.Book;
 import de.jug_gr.modelviewstar.business.LibraryService;
 import de.jug_gr.modelviewstar.business.LibraryServiceImpl;
 import de.saxsys.mvvmfx.FluentViewLoader;
@@ -36,10 +35,6 @@ public class AppMvvmfx extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
         FlatterFX.style(FlatterInputType.DEFAULT);
-    }
-
-    private Book createBook(String title, String author, String desc){
-        return new Book(null, title, author, desc, null, null);
     }
 }
 

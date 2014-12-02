@@ -1,11 +1,7 @@
 apply plugin: "java"
-apply plugin: "application"
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
-
-mainClassName = "de.jug_gr.modelviewstar.mvvmfx.App"
-jar.manifest.attributes("Main-Class" : mainClassName)
 
 
 repositories {
