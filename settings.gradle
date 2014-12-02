@@ -4,4 +4,5 @@ include "mvvmfx"
 include 'business'
 include 'mvp_passive_view'
 include 'mvp_afterburner'
+include "mvc"
 

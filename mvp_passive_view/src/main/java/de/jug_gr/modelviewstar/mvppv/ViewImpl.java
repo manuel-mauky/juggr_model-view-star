@@ -55,7 +55,9 @@ public class ViewImpl extends AnchorPane implements View{
 
     public void initialize(){
         bookList.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue)->{
-            selectObserver.run();
+            if(selectObserver != null){
+                selectObserver.run();
+            }
         });
     }
 
