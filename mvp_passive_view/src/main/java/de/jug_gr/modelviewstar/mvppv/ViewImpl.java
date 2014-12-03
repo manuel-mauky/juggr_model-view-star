@@ -36,27 +36,23 @@ public class ViewImpl extends AnchorPane implements View{
 
     @FXML
     private Label errorLabel;
-
+    private Presenter presenter;
 
 
     public ViewImpl(){
         load();
     }
 
-    private Runnable searchButtonObserver;
-
-    private Runnable selectObserver;
-
     public void searchButtonPressed(){
-        if(searchButtonObserver != null){
-            searchButtonObserver.run();
+        if(presenter != null){
+            presenter.search();
         }
     }
 
     public void initialize(){
         bookList.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue)->{
-            if(selectObserver != null){
-                selectObserver.run();
+            if(presenter != null){
+                presenter.select();
             }
         });
     }
@@ -75,18 +71,13 @@ public class ViewImpl extends AnchorPane implements View{
     }
 
     @Override
+    public void setPresenter(Presenter presenter) {
+        this.presenter = presenter;
+    }
+
+    @Override
     public Parent getRoot() {
         return this;
-    }
-
-    @Override
-    public void onSearch(Runnable observer) {
-        this.searchButtonObserver = observer;
-    }
-
-    @Override
-    public void onSelect(Runnable observer) {
-        this.selectObserver = observer;
     }
 
     @Override

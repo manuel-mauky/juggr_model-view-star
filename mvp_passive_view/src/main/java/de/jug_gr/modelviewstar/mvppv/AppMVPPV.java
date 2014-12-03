@@ -20,6 +20,7 @@ public class AppMVPPV extends Application {
 
         EasyDI context = new EasyDI();
         context.bindInterface(View.class, ViewImpl.class);
+        context.bindInterface(Presenter.class, PresenterImpl.class);
         context.bindInterface(LibraryService.class, LibraryServiceImpl.class);
 
         final Presenter presenter = context.getInstance(Presenter.class);

@@ -6,11 +6,9 @@ import java.util.List;
 
 public interface View {
 
+    void setPresenter(Presenter presenter);
+
     Parent getRoot();
-
-    void onSearch(Runnable observer);
-
-    void onSelect(Runnable observer);
 
     int getSelectedIndex();
 

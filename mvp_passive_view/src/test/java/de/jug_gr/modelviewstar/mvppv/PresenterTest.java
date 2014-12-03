@@ -5,8 +5,10 @@ import de.jug_gr.modelviewstar.business.LibraryService;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 import static org.mockito.Mockito.*;
 
@@ -24,7 +26,7 @@ public class PresenterTest {
         libraryService = mock(LibraryService.class);
         model = new Model(libraryService);
 
-        presenter = new Presenter(model, view);
+        presenter = new PresenterImpl(model, view);
     }
 
 
@@ -37,18 +39,23 @@ public class PresenterTest {
         Book book3 = createBook("book starting with b", "some author", null);
         Book book3WithDescription = createBook("book starting with b", "some author", "some description 3");
 
-        when(libraryService.search("a", null)).thenReturn(Arrays.asList(book1, book2));
-        when(libraryService.search("b", null)).thenReturn(Arrays.asList(book3));
-        when(libraryService.search("", null)).thenReturn(Collections.emptyList());
+        when(libraryService.search(eq("a"), any())).thenReturn(Arrays.asList(book1, book2));
+        when(libraryService.search(eq("b"), any())).thenReturn(Arrays.asList(book3));
+        when(libraryService.search(eq(""), any())).thenReturn(Collections.emptyList());
 
-        when(libraryService.showDetails(book1, null)).thenReturn(book1WithDescription);
-        when(libraryService.showDetails(book2, null)).thenReturn(book2WithDescription);
-        when(libraryService.showDetails(book3, null)).thenReturn(book3WithDescription);
+        when(libraryService.showDetails(eq(book1), any())).thenReturn(book1WithDescription);
+        when(libraryService.showDetails(eq(book2), any())).thenReturn(book2WithDescription);
+        when(libraryService.showDetails(eq(book3), any())).thenReturn(book3WithDescription);
 
 
         when(view.getSearchString()).thenReturn("a");
 
-        // how do I fire 'onSearch' on a mock?
+        presenter.search();
+
+        List<String> expectedTitles = new ArrayList<>();
+        expectedTitles.add("a book starting with a");
+        expectedTitles.add("another book starting with a");
+        verify(view).setBooks(expectedTitles);
 
     }
 
