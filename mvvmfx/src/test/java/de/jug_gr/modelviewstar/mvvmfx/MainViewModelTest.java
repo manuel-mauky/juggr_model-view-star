@@ -130,7 +130,7 @@ public class MainViewModelTest {
     }
 
     private Book createBook(String title, String author, String desc){
-        return new Book(null, title, author, desc, null, null);
+        return new Book(null, title, author, desc);
     }
 
 }

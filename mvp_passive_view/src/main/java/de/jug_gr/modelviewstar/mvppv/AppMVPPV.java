@@ -4,6 +4,7 @@ import com.guigarage.flatterfx.FlatterFX;
 import com.guigarage.flatterfx.FlatterInputType;
 import de.jug_gr.modelviewstar.business.LibraryService;
 import de.jug_gr.modelviewstar.business.LibraryServiceImpl;
+import de.jug_gr.modelviewstar.business.LibraryServiceMockImpl;
 import eu.lestard.easydi.EasyDI;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -21,7 +22,7 @@ public class AppMVPPV extends Application {
         EasyDI context = new EasyDI();
         context.bindInterface(View.class, ViewImpl.class);
         context.bindInterface(Presenter.class, PresenterImpl.class);
-        context.bindInterface(LibraryService.class, LibraryServiceImpl.class);
+        context.bindInterface(LibraryService.class, LibraryServiceMockImpl.class);
 
         final Presenter presenter = context.getInstance(Presenter.class);
 

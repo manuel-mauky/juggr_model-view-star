@@ -5,6 +5,7 @@ import com.guigarage.flatterfx.FlatterFX;
 import com.guigarage.flatterfx.FlatterInputType;
 import de.jug_gr.modelviewstar.business.LibraryService;
 import de.jug_gr.modelviewstar.business.LibraryServiceImpl;
+import de.jug_gr.modelviewstar.business.LibraryServiceMockImpl;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
@@ -19,7 +20,7 @@ public class AppMVPAB extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        Injector.setModelOrService(LibraryService.class, new LibraryServiceImpl());
+        Injector.setModelOrService(LibraryService.class, new LibraryServiceMockImpl());
 
 
         MainView mainView = new MainView();

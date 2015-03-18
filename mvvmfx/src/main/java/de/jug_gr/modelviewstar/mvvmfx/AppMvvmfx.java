@@ -4,6 +4,7 @@ import com.guigarage.flatterfx.FlatterFX;
 import com.guigarage.flatterfx.FlatterInputType;
 import de.jug_gr.modelviewstar.business.LibraryService;
 import de.jug_gr.modelviewstar.business.LibraryServiceImpl;
+import de.jug_gr.modelviewstar.business.LibraryServiceMockImpl;
 import de.saxsys.mvvmfx.FluentViewLoader;
 import de.saxsys.mvvmfx.MvvmFX;
 import eu.lestard.easydi.EasyDI;
@@ -21,7 +22,7 @@ public class AppMvvmfx extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         EasyDI context = new EasyDI();
-        context.bindInterface(LibraryService.class, LibraryServiceImpl.class);
+        context.bindInterface(LibraryService.class, LibraryServiceMockImpl.class);
         MvvmFX.setCustomDependencyInjector(context::getInstance);
 
         primaryStage.setTitle("Library JavaFX");
