@@ -1,7 +1,7 @@
 package de.jug_gr.modelviewstar.flux.stores;
 
 import de.jug_gr.modelviewstar.business.Book;
-import de.jug_gr.modelviewstar.business.Error;
+import de.jug_gr.modelviewstar.business.ErrorObject;
 import de.jug_gr.modelviewstar.business.LibraryService;
 import de.jug_gr.modelviewstar.flux.Dispatcher;
 import de.jug_gr.modelviewstar.flux.actions.Action;
@@ -17,7 +17,7 @@ public class ListStore extends StoreBase {
 
     private List<Book> books = new ArrayList<>();
 
-    private Error error;
+    private ErrorObject error;
 
 
 
@@ -44,7 +44,7 @@ public class ListStore extends StoreBase {
     }
 
 
-    private void setError(Error error) {
+    private void setError(ErrorObject error) {
         this.error = error;
     }
 
@@ -53,7 +53,7 @@ public class ListStore extends StoreBase {
         return books;
     }
 
-    public Optional<Error> getError() {
+    public Optional<ErrorObject> getError() {
         return Optional.ofNullable(error);
     }
 }

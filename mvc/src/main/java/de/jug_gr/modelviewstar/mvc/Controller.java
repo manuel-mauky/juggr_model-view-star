@@ -1,7 +1,7 @@
 package de.jug_gr.modelviewstar.mvc;
 
 import de.jug_gr.modelviewstar.business.Book;
-import de.jug_gr.modelviewstar.business.Error;
+import de.jug_gr.modelviewstar.business.ErrorObject;
 import de.jug_gr.modelviewstar.business.LibraryService;
 
 import javax.inject.Singleton;
@@ -21,7 +21,7 @@ public class Controller {
         this.view = view;
         this.libraryService = libraryService;
 
-        Consumer<Error> errorConsumer = model::error;
+        Consumer<ErrorObject> errorConsumer = model::error;
 
         view.onSearch(searchString -> {
             final List<Book> bookList = libraryService.search(searchString, errorConsumer);

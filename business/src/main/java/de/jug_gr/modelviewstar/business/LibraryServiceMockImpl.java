@@ -31,7 +31,7 @@ public class LibraryServiceMockImpl implements LibraryService{
 	}
 	
 	@Override
-	public List<Book> search(String query, Consumer<Error> errorCallback) {
+	public List<Book> search(String query, Consumer<ErrorObject> errorCallback) {
 		return books.stream()
 				.filter(b -> b.getTitle().contains(query))
 				.map(b -> new Book(b.getHref(), b.getTitle(), b.getAuthor(), null)) // no desc
@@ -40,7 +40,7 @@ public class LibraryServiceMockImpl implements LibraryService{
 	}
 
 	@Override
-	public Book showDetails(Book book, Consumer<Error> errorCallback) {
+	public Book showDetails(Book book, Consumer<ErrorObject> errorCallback) {
 		return books.stream()
 				.filter(b -> b.getHref().equals(book.getHref()))
 				.findFirst().orElse(null);

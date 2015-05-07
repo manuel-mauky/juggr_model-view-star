@@ -1,7 +1,7 @@
 package de.jug_gr.modelviewstar.flux.views;
 
 import de.jug_gr.modelviewstar.business.Book;
-import de.jug_gr.modelviewstar.business.Error;
+import de.jug_gr.modelviewstar.business.ErrorObject;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
@@ -33,7 +33,7 @@ public class DetailsView {
         descriptionLabel.setText(book.getDesc());
     }
 
-    public void updateError(Error error) {
+    public void updateError(ErrorObject error) {
         errorLabel.setText(error == null ? "" : error.getMessage());
     }
 

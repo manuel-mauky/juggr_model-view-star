@@ -1,7 +1,7 @@
 package de.jug_gr.modelviewstar.flux.views;
 
 import de.jug_gr.modelviewstar.business.Book;
-import de.jug_gr.modelviewstar.business.Error;
+import de.jug_gr.modelviewstar.business.ErrorObject;
 import de.jug_gr.modelviewstar.flux.stores.ListStore;
 import de.jug_gr.modelviewstar.flux.stores.SelectedItemStore;
 import javafx.fxml.FXML;
@@ -35,7 +35,7 @@ public class ControllerView {
     }
 
     private void updateBookList() {
-        final Optional<Error> error = listStore.getError();
+        final Optional<ErrorObject> error = listStore.getError();
 
         if(error.isPresent()) {
             detailsController.updateError(error.get());
@@ -49,7 +49,7 @@ public class ControllerView {
     }
 
     private void updateDetails() {
-        final Optional<Error> error = selectedItemStore.getError();
+        final Optional<ErrorObject> error = selectedItemStore.getError();
 
         if(error.isPresent()) {
             detailsController.updateError(error.get());

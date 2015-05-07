@@ -1,7 +1,7 @@
 package de.jug_gr.modelviewstar.mvvmfx;
 
 import de.jug_gr.modelviewstar.business.Book;
-import de.jug_gr.modelviewstar.business.Error;
+import de.jug_gr.modelviewstar.business.ErrorObject;
 import de.jug_gr.modelviewstar.business.LibraryService;
 import de.saxsys.mvvmfx.ViewModel;
 import eu.lestard.advanced_bindings.api.ObjectBindings;
@@ -44,7 +44,7 @@ public class MainViewModel implements ViewModel {
 
 
     public void search(){
-        Consumer<Error> errorHandler = err -> error.set(err.getMessage());
+        Consumer<ErrorObject> errorHandler = err -> error.set(err.getMessage());
 
         final List<Book> result = libraryService.search(searchString.get(), errorHandler);
 

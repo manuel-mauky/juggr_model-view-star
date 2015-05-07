@@ -12,7 +12,6 @@ import org.slf4j.LoggerFactory;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.Response;
 import java.io.Serializable;
 import java.lang.*;
@@ -41,7 +40,7 @@ public class LibraryServiceImpl implements Serializable, LibraryService {
     }
 
     @Override
-    public List<Book> search(String query, Consumer<Error> errorCallback) {
+    public List<Book> search(String query, Consumer<ErrorObject> errorCallback) {
         try {
             // home
             Response responseHome = apiClient.target(BASE_URL).request(HAL_JSON).get();
@@ -72,13 +71,13 @@ public class LibraryServiceImpl implements Serializable, LibraryService {
             return books;
         } catch (Throwable e) {
             LOGGER.error("Error during search", e);
-            errorCallback.accept(Error.error("Error during search", e.getMessage()));
+            errorCallback.accept(ErrorObject.error("Error during search", e.getMessage()));
             return new ArrayList<>();
         }
     }
 
     @Override
-    public Book showDetails(Book book, Consumer<Error> errorCallback) {
+    public Book showDetails(Book book, Consumer<ErrorObject> errorCallback) {
         LOGGER.debug("Show details for book at {}", book.getHref());
         try {
             Response response = apiClient.target(book.getHref()).request(HAL_JSON).get();
@@ -86,7 +85,7 @@ public class LibraryServiceImpl implements Serializable, LibraryService {
             return toBook(rep);
         } catch (Exception e) {
             LOGGER.error("Error retrieving book", e);
-            errorCallback.accept(Error.error("Error retrieving book", e.getMessage()));
+            errorCallback.accept(ErrorObject.error("Error retrieving book", e.getMessage()));
             return null;
         }
     }

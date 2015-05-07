@@ -1,16 +1,16 @@
 package de.jug_gr.modelviewstar.business;
 
-public class Error {
+public class ErrorObject {
 
     private final String message;
 
     private final String details;
 
-    public static Error error(String message, String details){
-        return new Error(message, details);
+    public static ErrorObject error(String message, String details){
+        return new ErrorObject(message, details);
     }
 
-    private Error(String message, String details){
+    private ErrorObject(String message, String details){
         this.message = message;
         this.details = details;
     }

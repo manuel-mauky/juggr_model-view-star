@@ -2,7 +2,7 @@ package de.jug_gr.modelviewstar.mvvmfx;
 
 
 import de.jug_gr.modelviewstar.business.Book;
-import de.jug_gr.modelviewstar.business.Error;
+import de.jug_gr.modelviewstar.business.ErrorObject;
 import de.jug_gr.modelviewstar.business.LibraryService;
 import org.junit.Before;
 import org.junit.Test;
@@ -116,8 +116,8 @@ public class MainViewModelTest {
         assertThat(viewModel.errorProperty()).hasNullValue();
         when(libraryService.search(any(), any())).thenAnswer(invocation -> {
 
-            final Consumer<Error> errorHandler = (Consumer)invocation.getArguments()[1];
-            errorHandler.accept(Error.error("error message", "description"));
+            final Consumer<ErrorObject> errorHandler = (Consumer)invocation.getArguments()[1];
+            errorHandler.accept(ErrorObject.error("error message", "description"));
             return Collections.emptyList();
         });
 

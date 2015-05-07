@@ -1,7 +1,7 @@
 package de.jug_gr.modelviewstar.mvppv;
 
 import de.jug_gr.modelviewstar.business.*;
-import de.jug_gr.modelviewstar.business.Error;
+import de.jug_gr.modelviewstar.business.ErrorObject;
 
 import javax.inject.Singleton;
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ public class Model {
 
     private List<Runnable> booksObservers = new ArrayList<>();
 
-    private List<Consumer<Error>> errorObservers = new ArrayList<>();
+    private List<Consumer<ErrorObject>> errorObservers = new ArrayList<>();
 
     public Model(LibraryService libraryService){
         this.libraryService = libraryService;
@@ -29,7 +29,7 @@ public class Model {
     public void search(String searchString){
         books.clear();
 
-        Consumer<Error> errorBroadcaster = err ->
+        Consumer<ErrorObject> errorBroadcaster = err ->
             errorObservers.forEach(
                 observer -> observer.accept(err));
 
@@ -51,11 +51,11 @@ public class Model {
         booksObservers.remove(observer);
     }
 
-    public void addErrorObserver(Consumer<Error> observer){
+    public void addErrorObserver(Consumer<ErrorObject> observer){
         errorObservers.add(observer);
     }
 
-    public void removeErrorObserver(Consumer<Error> observer){
+    public void removeErrorObserver(Consumer<ErrorObject> observer){
         errorObservers.remove(observer);
     }
 
