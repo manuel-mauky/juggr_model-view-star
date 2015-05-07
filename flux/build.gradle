@@ -17,7 +17,7 @@ repositories {
 }
 
 dependencies {
-    compile "de.jensd:fontawesomefx:8.0.10"
+    compile "de.jensd:fontawesomefx:8.3"
     compile "com.guigarage:flatter:0.7"
     compile "ch.qos.logback:logback-classic:1.1.2"
 

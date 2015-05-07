@@ -27,7 +27,7 @@ public class FluxApp extends Application {
         context.bindInterface(LibraryService.class, LibraryServiceMockImpl.class);
 
 
-        final URL resource = this.getClass().getResource("/View.fxml");
+        final URL resource = this.getClass().getResource("/MainView.fxml");
         if (resource == null) {
             throw new IllegalStateException("Can't find fxml file");
         }
