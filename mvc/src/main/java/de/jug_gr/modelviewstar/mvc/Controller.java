@@ -8,7 +8,6 @@ import javax.inject.Singleton;
 import java.util.List;
 import java.util.function.Consumer;
 
-@Singleton
 public class Controller {
 
     private final Model model;

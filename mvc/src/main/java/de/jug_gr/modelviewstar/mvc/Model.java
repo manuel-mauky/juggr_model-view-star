@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
-@Singleton
 public class Model {
 
     private List<Book> books = new ArrayList<>();

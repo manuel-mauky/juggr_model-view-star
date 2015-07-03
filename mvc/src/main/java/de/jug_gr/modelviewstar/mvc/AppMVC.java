@@ -17,14 +17,15 @@ public class AppMVC extends Application{
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+		LibraryService backend = new LibraryServiceMockImpl();
+		
+		
+		Model model = new Model();
 
-        EasyDI context = new EasyDI();
-        context.bindInterface(LibraryService.class, LibraryServiceMockImpl.class);
-
-        final Controller controller = context.getInstance(Controller.class);
-
-        final View view = controller.getView();
-
+		View view = new View(model);
+		
+		Controller controller = new Controller(model, view, backend);
+		
         primaryStage.setTitle("Library MVC");
         primaryStage.setMinWidth(1200);
         primaryStage.setMaxWidth(1200);

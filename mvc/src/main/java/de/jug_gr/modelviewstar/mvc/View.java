@@ -14,7 +14,6 @@ import java.io.IOException;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
-@Singleton
 public class View extends AnchorPane{
 
     @FXML
