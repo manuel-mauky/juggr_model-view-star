@@ -3,7 +3,6 @@ package de.jug_gr.modelviewstar.mvc;
 import de.jug_gr.modelviewstar.business.*;
 import de.jug_gr.modelviewstar.business.ErrorObject;
 
-import javax.inject.Singleton;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;

@@ -9,7 +9,6 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
-import javax.inject.Singleton;
 import java.io.IOException;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;

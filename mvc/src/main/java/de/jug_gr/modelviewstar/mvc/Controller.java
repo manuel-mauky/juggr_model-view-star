@@ -4,7 +4,6 @@ import de.jug_gr.modelviewstar.business.Book;
 import de.jug_gr.modelviewstar.business.ErrorObject;
 import de.jug_gr.modelviewstar.business.LibraryService;
 
-import javax.inject.Singleton;
 import java.util.List;
 import java.util.function.Consumer;
 
