@@ -6,6 +6,4 @@ public interface Presenter {
 
     void select();
 
-    View getView();
-
 }

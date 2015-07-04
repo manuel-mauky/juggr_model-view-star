@@ -17,9 +17,6 @@ dependencies {
     compile "com.guigarage:flatter:0.7"
     compile "ch.qos.logback:logback-classic:1.1.2"
 
-    compile "eu.lestard:easy-di:0.1.0"
-    compile "eu.lestard:advanced-bindings:0.2.0"
-
     compile project(":business")
 
     testCompile "org.assertj:assertj-core:1.6.0"

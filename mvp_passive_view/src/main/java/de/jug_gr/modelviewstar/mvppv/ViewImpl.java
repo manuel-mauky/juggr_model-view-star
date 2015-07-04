@@ -9,11 +9,9 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
-import javax.inject.Singleton;
 import java.io.IOException;
 import java.util.List;
 
-@Singleton
 public class ViewImpl extends AnchorPane implements View{
 
     @FXML

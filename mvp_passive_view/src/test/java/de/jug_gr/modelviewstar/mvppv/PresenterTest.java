@@ -24,9 +24,9 @@ public class PresenterTest {
         view = mock(View.class);
 
         libraryService = mock(LibraryService.class);
-        model = new Model(libraryService);
+        model = new Model();
 
-        presenter = new PresenterImpl(model, view);
+        presenter = new PresenterImpl(libraryService,model, view);
     }
 
 
