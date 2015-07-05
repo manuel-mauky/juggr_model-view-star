@@ -1,7 +1,5 @@
 package de.jug_gr.modelviewstar.business;
 
-import com.theoryinpractise.halbuilder.api.Link;
-
 public class Book {
 
     private final String href;
@@ -9,6 +7,10 @@ public class Book {
     private String author;
     private String desc;
     private Integer borrower;
+
+    public Book(String href, String title) {
+        this(href, title, "", "");
+    }
 
     public Book(String href, String title, String author, String desc) {
         super();
