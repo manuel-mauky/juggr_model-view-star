@@ -8,6 +8,7 @@ import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 
 import java.util.List;
+import java.util.Optional;
 
 public class SearchResultView {
 
@@ -27,7 +28,11 @@ public class SearchResultView {
             protected void updateItem(Book item, boolean empty) {
                 super.updateItem(item, empty);
 
-                setText(item == null ? "" : item.getTitle());
+                final String newTitle = Optional.ofNullable(item)
+                        .map(Book::getTitle)
+                        .orElse("");
+
+                setText(newTitle);
             }
         });
 

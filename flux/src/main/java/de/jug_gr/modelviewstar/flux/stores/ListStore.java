@@ -9,6 +9,7 @@ import de.jug_gr.modelviewstar.flux.actions.SearchAction;
 
 import javax.inject.Singleton;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,9 +19,6 @@ public class ListStore extends StoreBase {
     private List<Book> books = new ArrayList<>();
 
     private ErrorObject error;
-
-
-
 
     private final LibraryService libraryService;
 
@@ -37,7 +35,8 @@ public class ListStore extends StoreBase {
             SearchAction searchAction = (SearchAction) action;
             error = null;
 
-            books = libraryService.search(searchAction.getSearchString(), this::setError);
+            books.clear();
+            books.addAll(libraryService.search(searchAction.getSearchString(), this::setError));
 
             publishOnChange();
         }
@@ -50,7 +49,7 @@ public class ListStore extends StoreBase {
 
 
     public List<Book> getBooks() {
-        return books;
+        return Collections.unmodifiableList(books);
     }
 
     public Optional<ErrorObject> getError() {

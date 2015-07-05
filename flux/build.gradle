@@ -22,11 +22,10 @@ dependencies {
     compile "ch.qos.logback:logback-classic:1.1.2"
 
     compile "eu.lestard:easy-di:0.3.0"
-    compile "eu.lestard:advanced-bindings:0.2.0"
 
     compile project(":business")
 
-    testCompile "org.assertj:assertj-core:1.6.0"
+    testCompile "org.assertj:assertj-core:3.0.0"
     testCompile "eu.lestard:assertj-javafx:0.2.0"
     testCompile "junit:junit:4.11"
     testCompile 'org.mockito:mockito-all:1.10.8'

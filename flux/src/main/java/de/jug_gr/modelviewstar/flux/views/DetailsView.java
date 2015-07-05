@@ -35,6 +35,10 @@ public class DetailsView {
 
     public void updateError(ErrorObject error) {
         errorLabel.setText(error == null ? "" : error.getMessage());
+
+        titleLabel.setText("");
+        authorLabel.setText("");
+        descriptionLabel.setText("");
     }
 
 }
