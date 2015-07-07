@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox fx:controller="fluxfx.views.SearchControlsView" alignment="CENTER" spacing="5.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label text="Search for" HBox.hgrow="ALWAYS" />
+      <TextField fx:id="searchTextField" promptText="Query" HBox.hgrow="SOMETIMES" />
+      <Button fx:id="searchButton" defaultButton="true" mnemonicParsing="false" onAction="#searchButtonPressed" text="Search" HBox.hgrow="ALWAYS" />
+   </children>
+</HBox>

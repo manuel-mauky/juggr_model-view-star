@@ -1,0 +1,2 @@
+This module contains an example of the [Flux architecture](https://facebook.github.io/flux/) 
+but other then the [Flux](../flux) module, this example uses the experimental library [FluxFX](https://github.com/lestard/FluxFX).

@@ -6,5 +6,6 @@ include 'mvp_passive_view'
 include 'mvp_afterburner'
 include "mvc"
 include "flux"
+include "fluxfx"
 include "mvvm"
 
